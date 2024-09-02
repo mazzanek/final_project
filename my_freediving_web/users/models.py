@@ -11,6 +11,7 @@ class DivingRecord(models.Model):
     CTW = 'CTW'
     CTWB = 'CTWB'
     CNF = 'CNF'
+    STA = 'STA'
 
     DISCIPLINE_CHOICES = [
         (DYN, 'Dynamic with Fins (DYN)'),
@@ -20,6 +21,7 @@ class DivingRecord(models.Model):
         (CTW, 'Constant Weight (CTW)'),
         (CTWB, 'Constant Weight Bi-Fins (CTWB)'),
         (CNF, 'Constant Weight No Fins (CNF)'),
+        (STA, 'Static apnea (STA)'),
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
