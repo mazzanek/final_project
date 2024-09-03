@@ -13,11 +13,12 @@
         <article class="a2">
           <div class="wrapper">
             <div class="col-9">
-                  <h1>Diving Records</h1>
+                  <h1>Diving Records of all members</h1>
+                    <BR><BR>
                     <ul>
                     {% for DivingRecords in pbs %}
                         <li>
-                            <h2>{{ DivingRecords.user.username }} - {{ DivingRecords.depth }}m {{DivingRecords.discipline}} at {{DivingRecords.location}} on {{DivingRecords.date}}</h2>
+                            <h4>{{ DivingRecords.user.username }}   -   {{ DivingRecords.depth }}m {{DivingRecords.discipline}} at {{DivingRecords.location}} on {{DivingRecords.date}}</h4>
                         </li>
                     {% endfor %}
                 </ul>

@@ -26,7 +26,6 @@
       <h1 class="logo"><a href="{% url 'home' %}">DivingClub</a></h1>
       <nav>
         <ul class="sf-menu">
-          <li class="current"><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li> <a href="#">Disciplines</a>
             <ul>
@@ -62,13 +61,6 @@
           </li>
           <li><a href="{% url 'contacts' %}">Contacts</a></li>
         </ul>
-           {% if user.is_authenticated %}
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-            </form>
-        {% endif %}
-
       </nav>
       <div class="clear"></div>
     </header>

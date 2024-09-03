@@ -7,7 +7,16 @@
         <article class="a2">
           <div class="wrapper">
             <div class="col-9">
-                <h1>Edit Diving Record</h1>
+               <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1>Edit Diving Record</h1>
+
+                        {% if user.is_authenticated %}
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Logout</button>
+                            </form>
+                        {% endif %}
+                    </div>
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
