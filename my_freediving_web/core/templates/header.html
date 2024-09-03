@@ -1,19 +1,90 @@
-<header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-
-            {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}">Profile</a>
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Logout</button>
-                </form>
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'register' %}">Register</a>
-            {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/jquery.cycle.all.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<div class="main-indents">
+  <div class="main">
+    <!-- Header -->
+    <header>
+      <h1 class="logo"><a href="{% url 'home' %}">DivingClub</a></h1>
+      <nav>
+        <ul class="sf-menu">
+          <li class="current"><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li> <a href="#">Disciplines</a>
+            <ul>
+              <li><a href="#">Dynamic</a>
+                <ul>
+                  <li><a href="{% url 'dnf' %}">DNF</a></li>
+                  <li><a href="{% url 'dyn' %}">DYN</a></li>
+                  <li><a href="{% url 'dynb' %}">DYNB</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Deep</a>
+                <ul>
+                  <li><a href="{% url 'fim' %}">FIM</a></li>
+                  <li><a href="{% url 'ctw' %}">CTW</a></li>
+                  <li><a href="{% url 'ctwb' %}">CTWB</a></li>
+                  <li><a href="{% url 'dnf' %}">DNF</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'sta' %}">Static Apnea</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Members Section</a>
+            <ul>
+              <li><a href="{% url 'pbs' %}">Personal best</a></li>
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+              {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          <li><a href="{% url 'contacts' %}">Contacts</a></li>
         </ul>
-    </nav>
-</header>
+           {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% endif %}
+
+      </nav>
+      <div class="clear"></div>
+    </header>
+    <!-- Slider -->
+    <div class="mp-slider">
+      <ul class="items">
+        <li><img src="images/slide-1.jpg" alt="">
+          <div class="banner"><span class="row-1"><b>See</b> the Underwater World</span><span class="row-2">With Your Own <b>Eyes</b></span></div>
+        </li>
+        <li><img src="images/slide-2.jpg" alt="">
+          <div class="banner"><span class="row-1"><b>All</b> the Beauty</span><span class="row-2">of the Deep <b>Sea</b></span></div>
+        </li>
+        <li><img src="images/slide-3.jpg" alt="">
+          <div class="banner"><span class="row-1"><b>Find</b> the peace</span><span class="row-2">in the water <b>World</b></span></div>
+        </li>
+      </ul>
+      <a href="#" class="mp-prev"></a> <a href="#" class="mp-next"></a>
+    </div>
+  </div>
+ </div>
+</body>
+</html>

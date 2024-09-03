@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
+from .models import DivingRecord
 
 
 def register(request):
@@ -15,6 +16,10 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
+
+def pb_list(request):
+    DivingRecords = DivingRecord.objects.all()  # Získá všechny produkty z databáze
+    return render(request, 'pb.html', {'pbs': DivingRecord})
 
 
 @login_required

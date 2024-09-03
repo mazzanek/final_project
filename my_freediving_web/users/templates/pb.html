@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+  PB
+{% endblock %}
+
+
+{% block content %}
+    <!-- Content -->
+    <section id="content">
+      <h1>Diving Records</h1>
+        <ul>
+        {% for DivingRecord in pbs %}
+            <li>
+                <h2>{{ DivingRecord.user.username }} - { DivingRecord.depth }}m {DivingRecord.discipline} at {DivingRecord.location} on {DivingRecord.date}</h2>
+            </li>
+        {% endfor %}
+    </ul>
+    </section>
+  {% endblock %}
