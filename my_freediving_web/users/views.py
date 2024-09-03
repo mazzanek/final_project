@@ -19,7 +19,7 @@ def register(request):
 
 def pb_list(request):
     DivingRecords = DivingRecord.objects.all()  # Získá všechny produkty z databáze
-    return render(request, 'pb.html', {'pbs': DivingRecord})
+    return render(request, 'pb.html', {'pbs': DivingRecords})
 
 
 @login_required

@@ -10,9 +10,9 @@
     <section id="content">
       <h1>Diving Records</h1>
         <ul>
-        {% for DivingRecord in pbs %}
+        {% for DivingRecords in pbs %}
             <li>
-                <h2>{{ DivingRecord.user.username }} - { DivingRecord.depth }}m {DivingRecord.discipline} at {DivingRecord.location} on {DivingRecord.date}</h2>
+                <h2>{{ DivingRecords.user.username }} - {{ DivingRecords.depth }}m {{DivingRecords.discipline}} at {{DivingRecords.location}} on {{DivingRecords.date}}</h2>
             </li>
         {% endfor %}
     </ul>
