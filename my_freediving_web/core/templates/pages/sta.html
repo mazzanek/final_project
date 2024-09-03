@@ -7,11 +7,12 @@
 
 {% block content %}
     <!-- Content -->
+{% load static %}
     <section id="content">
       <div class="container_12">
         <article class="a1">
           <div class="wrapper">
-            <figure class="img-box img-indent-1"> <img src="images/STA.jpg" alt=""> </figure>
+            <figure class="img-box img-indent-1"> <img src="{% static 'images/STA.jpg ' %}" alt=""> </figure>
             <div class="extra-wrap">
               <h3> STA - Static apnea </h3>
               <p class="p2"> discipline in which a person holds their breath underwater for as long as possible, and need not swim any distance. </p>

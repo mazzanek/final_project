@@ -1,10 +1,22 @@
 {% extends "master.html" %}
 
 {% block content %}
-  <h1>Add New Diving Record</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Record</button>
-  </form>
+{% load static %}
+<section id="content">
+      <div class="container_12">
+        <article class="a2">
+          <div class="wrapper">
+            <div class="col-9">
+              <h1>Add New Diving Record</h1>
+              <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add Record</button>
+              </form>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
 {% endblock %}

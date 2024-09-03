@@ -1,12 +1,23 @@
 {% extends "master.html" %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    <small>
-        Need An Account? <a href="{% url 'register' %}">Sign Up Now</a>
-    </small>
+{% load static %}
+<section id="content">
+      <div class="container_12">
+        <article class="a2">
+          <div class="wrapper">
+            <div class="col-9">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Login</button>
+                </form>
+                <small>
+                    Need An Account? <a href="{% url 'register' %}">Sign Up Now</a>
+                </small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 {% endblock content %}

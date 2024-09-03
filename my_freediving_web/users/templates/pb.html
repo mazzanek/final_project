@@ -7,14 +7,23 @@
 
 {% block content %}
     <!-- Content -->
-    <section id="content">
-      <h1>Diving Records</h1>
-        <ul>
-        {% for DivingRecords in pbs %}
-            <li>
-                <h2>{{ DivingRecords.user.username }} - {{ DivingRecords.depth }}m {{DivingRecords.discipline}} at {{DivingRecords.location}} on {{DivingRecords.date}}</h2>
-            </li>
-        {% endfor %}
-    </ul>
+          {% load static %}
+<section id="content">
+      <div class="container_12">
+        <article class="a2">
+          <div class="wrapper">
+            <div class="col-9">
+                  <h1>Diving Records</h1>
+                    <ul>
+                    {% for DivingRecords in pbs %}
+                        <li>
+                            <h2>{{ DivingRecords.user.username }} - {{ DivingRecords.depth }}m {{DivingRecords.discipline}} at {{DivingRecords.location}} on {{DivingRecords.date}}</h2>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
   {% endblock %}

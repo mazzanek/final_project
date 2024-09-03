@@ -7,11 +7,13 @@
 
 {% block content %}
     <!-- Content -->
+      {% load static %}
+
     <section id="content">
       <div class="container_12">
         <article class="a1">
           <div class="wrapper">
-            <figure class="img-box img-indent-1"> <img src="images/FIM.jpg" alt=""> </figure>
+            <figure class="img-box img-indent-1"> <img src="{% static 'images/FIM.jpg ' %}" alt=""> </figure>
             <div class="extra-wrap">
               <h3> FIM - Free immersion </h3>
               <p class="p2"> Freediving discipline in which the freediver dives under water without the use of propulsion equipment, but only by pulling on the rope during descent and ascent. </p>

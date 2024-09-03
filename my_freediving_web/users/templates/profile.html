@@ -1,21 +1,33 @@
 {% extends "master.html" %}
 
 {% block content %}
-    <div>
-        <h1>Profile</h1>
-        <br>
-        <h2>{{ user.username }}</h2>
-        <p>{{ user.email }}</p>
+   {% load static %}
+<section id="content">
+      <div class="container_12">
+        <article class="a2">
+          <div class="wrapper">
+            <div class="col-9">
+                <div>
+                    <h1>Profile</h1>
+                    <br>
+                    <h2>{{ user.username }}</h2>
+                    <p>{{ user.email }}</p>
 
-        <h1>Diving Records</h1>
-        <ul>
-        {% for DivingRecords_filter in pbsf %}
-            <li>
-                <h2>{{ DivingRecords_filter.user.username }} - {{ DivingRecords_filter.depth }}m {{DivingRecords_filter.discipline}} at {{DivingRecords_filter.location}} on {{DivingRecords_filter.date}}</h2>
-                <a href="{% url 'edit_diving_record' record_id=DivingRecords_filter.id %}">Edit</a>
-            </li>
-          {% endfor %}
+                    <h1>Diving Records</h1>
+                    <ul>
+                    {% for DivingRecords_filter in pbsf %}
+                        <li>
+                            <h2>{{ DivingRecords_filter.user.username }} - {{ DivingRecords_filter.depth }}m {{DivingRecords_filter.discipline}} at {{DivingRecords_filter.location}} on {{DivingRecords_filter.date}}</h2>
+                            <a href="{% url 'edit_diving_record' record_id=DivingRecords_filter.id %}">Edit</a>
+                        </li>
+                      {% endfor %}
 
-        </ul>
-    </div>
+                    </ul>
+                </div>
+
+              </div>
+          </div>
+        </article>
+      </div>
+    </section>
 {% endblock content %}

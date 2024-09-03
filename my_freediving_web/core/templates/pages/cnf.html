@@ -7,11 +7,12 @@
 
 {% block content %}
     <!-- Content -->
+{% load static %}
     <section id="content">
       <div class="container_12">
         <article class="a1">
           <div class="wrapper">
-            <figure class="img-box img-indent-1"> <img src="images/CNF.jpg" alt=""> </figure>
+            <figure class="img-box img-indent-1"> <img src="{% static 'images/CNF.jpg' %}" alt=""> </figure>
             <div class="extra-wrap">
               <h3> CNF - Constant weight without fins </h3>
               <p class="p2"> Freediving discipline in which the freediver descends and ascends by swimming without the use of fins or without pulling on the rope or changing his or her ballast; only a single hold of the rope to stop the descent and to start the ascent is allowed.</p>

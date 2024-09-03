@@ -1,7 +1,17 @@
 {% extends "master.html" %}
 
 {% block content %}
-    <h2>You have been logged out</h2>
-    <a href="{% url 'login' %}">Log In Again</a>
-
+   {% load static %}
+<section id="content">
+      <div class="container_12">
+        <article class="a2">
+          <div class="wrapper">
+            <div class="col-9">
+                <h2>You have been logged out</h2>
+                <a href="{% url 'login' %}">Log In Again</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 {% endblock content %}
