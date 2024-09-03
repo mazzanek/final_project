@@ -37,7 +37,4 @@ class DivingRecord(models.Model):
 
 
     def __str__(self):
-        return self.user.username
-
-        """
-        return f"{self.user.username} - {self.depth}m {self.discipline} at {self.location} on {self.date}" """""
+       return f"{self.user.username} - {self.depth}m {self.discipline} at {self.location} on {self.date}"

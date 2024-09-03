@@ -24,4 +24,5 @@ def pb_list(request):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')
+    DivingRecords_filter = DivingRecord.objects.filter(user=request.user)  # Získá všechny produkty z databáze pro usera
+    return render(request, 'profile.html', {'pbsf': DivingRecords_filter})
