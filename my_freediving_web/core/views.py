@@ -37,3 +37,6 @@ def memebers_page_view(request):
 
 def sta_page_view(request):
     return render(request, "pages/sta.html")
+
+def gdpr_page_view(request):
+    return render(request, "pages/gdpr.html")

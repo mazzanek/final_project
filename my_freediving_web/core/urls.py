@@ -16,4 +16,5 @@ urlpatterns = [
     path("fim", fim_page_view, name="fim"),
     path("members-info", memebers_page_view, name="members-info"),
     path("sta", sta_page_view, name="sta"),
+    path("gdpr", gdpr_page_view, name="gdpr"),
 ]
