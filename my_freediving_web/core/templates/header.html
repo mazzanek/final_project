@@ -48,12 +48,14 @@
           </li>
           <li><a href="#">Members Section</a>
             <ul>
-              <li><a href="{% url 'pbs' %}">Personal best</a></li>
+              <li><a href="{% url 'pbs' %}">Personal bests</a></li>
               {% if user.is_authenticated %}
                 <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'add_diving_record' %}">New Diving Record</a></li>
               {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'register' %}">Register</a></li>
+
               {% endif %}
             </ul>
           </li>

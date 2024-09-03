@@ -11,7 +11,8 @@
         <ul>
         {% for DivingRecords_filter in pbsf %}
             <li>
-                <h2>{{ DivingRecords_filter.user.username }} - {{ DivingRecords_filter.depth }}m {{DivingRecords_filter.discipline}} at {{DivingRecords_filter.location}} on {{DivingRecords.date}}</h2>
+                <h2>{{ DivingRecords_filter.user.username }} - {{ DivingRecords_filter.depth }}m {{DivingRecords_filter.discipline}} at {{DivingRecords_filter.location}} on {{DivingRecords_filter.date}}</h2>
+                <a href="{% url 'edit_diving_record' record_id=DivingRecords_filter.id %}">Edit</a>
             </li>
           {% endfor %}
 
